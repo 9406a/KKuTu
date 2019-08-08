@@ -14,9 +14,21 @@
 	
 	You should have received a copy of the GNU General Public License
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
+//-
+	볕뉘 수정사항:
+	* Login 실패 페이지 제작을 위한 파일 생성
+
+include module
+
 doctype html
 html
 	head
-		title= locals.title
+		title= L('title')
+		+PageHead()
 	body
-		p KKuTu Client is under construction...
+		span#locale= JSON.stringify(LANG)
+		div.middle
+			p= L('description')
+			br
+			a(href="/login")
+				button.login= L('login')
